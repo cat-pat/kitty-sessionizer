@@ -41,6 +41,7 @@ fn convert(session: &Vec<Value>) {
             if let Some(windows) = tab["windows"].as_array() {
                 if !windows.is_empty() {
                     println!("cd {}", windows[0]["cwd"].as_str().unwrap_or(""));
+                    println!();
                 }
 
                 for w in windows {
@@ -53,6 +54,7 @@ fn convert(session: &Vec<Value>) {
                     if w["is_focused"].as_bool().unwrap_or(false) {
                         println!("focus");
                     }
+                    println!();
                 }
             }
         }
