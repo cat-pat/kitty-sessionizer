@@ -31,8 +31,14 @@ fn fg_proc_to_str(fg: &[Value]) -> String {
 }
 
 fn convert(session: &Vec<Value>) {
+    let mut first = true;
+
     for os_window in session {
-        println!("new_os_window");
+        if first {
+            first = false;
+        } else {
+            println!("new_os_window");
+        }
 
         for tab in os_window["tabs"].as_array().unwrap() {
             println!();
