@@ -47,7 +47,8 @@ fn convert(session: &Vec<Value>) {
                 for w in windows {
                     println!("title {}", w["title"].as_str().unwrap_or(""));
                     println!(
-                        "launch {} {}",
+                        "launch --env PWD={} {} {}",
+                        w["cwd"].as_str().unwrap_or(""),
                         env_to_str(w["env"].as_object().unwrap()),
                         fg_proc_to_str(w["foreground_processes"].as_array().unwrap())
                     );
