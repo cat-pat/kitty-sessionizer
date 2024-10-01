@@ -7,11 +7,18 @@ Converts Kitty Session JSON to Session File
 1. Let sessionizer run kitty command for you
 
 ```shell
-kitty-sessionizer > my-session.kitty
+kitty-sessionizer > ~/.config/kitty/my-session.kitty
 ```
 
 1. Pipe `kitty @ ls` into sessionizer
 
 ```shell
-kitty @ ls | kitty-sessionizer --stdin > my-session.kitty
+kitty @ ls | kitty-sessionizer --stdin > ~/.config/kitty/my-session.kitty
+```
+
+Then you can use the session file
+
+```shell
+# 'kitty --session' reads from its .config folder
+kitty --session me-session.kitty
 ```
