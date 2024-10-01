@@ -20,5 +20,5 @@ Then you can use the session file
 
 ```shell
 # 'kitty --session' reads from its .config folder
-kitty --session me-session.kitty
+kitty --session my-session.kitty
 ```
