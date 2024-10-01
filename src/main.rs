@@ -11,7 +11,7 @@ fn env_to_str(env: &serde_json::Map<String, Value>) -> String {
         .join(" ")
 }
 
-fn cmdline_to_str(cmdline: &Vec<Value>) -> String {
+fn cmdline_to_str(cmdline: &[Value]) -> String {
     cmdline
         .iter()
         .map(|e| e.as_str().unwrap_or("").to_string())
@@ -19,7 +19,7 @@ fn cmdline_to_str(cmdline: &Vec<Value>) -> String {
         .join(" ")
 }
 
-fn fg_proc_to_str(fg: &Vec<Value>) -> String {
+fn fg_proc_to_str(fg: &[Value]) -> String {
     let fg = &fg[0];
     let cmdline_str = cmdline_to_str(fg["cmdline"].as_array().unwrap());
     if cmdline_str == "kitty @ ls" {
