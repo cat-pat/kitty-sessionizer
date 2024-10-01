@@ -22,7 +22,8 @@ fn cmdline_to_str(cmdline: &[Value]) -> String {
 fn fg_proc_to_str(fg: &[Value]) -> String {
     let fg = &fg[0];
     let cmdline_str = cmdline_to_str(fg["cmdline"].as_array().unwrap());
-    if cmdline_str == "kitty @ ls" {
+    // if cmdline_str == "./kitty-sessionizer" {
+    if cmdline_str.contains("kitty-sessionizer") {
         env::var("SHELL").unwrap_or_default()
     } else {
         cmdline_str
